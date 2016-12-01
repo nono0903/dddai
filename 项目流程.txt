@@ -1,0 +1,17 @@
+一
+	composer创建项目:composer create-project laravel/laravel=5.1.33 dddai
+
+二
+	导入模版,修改路径,以及文件名
+
+三
+	创建数据库,配置数据库文件,修改时区,创建用户表(注册.登录)迁移文件,已存在:直接修改使用使用
+	使用过程中出现注册时注册表不能写如其他字段这种问题的原因是自带的方法验证写入的时候没有对name,email,password以外的字段起到作用
+	需要在controller,以及model中手动添加这些字段;如果修改主键id,须在model中声明primaryKey='修改后的主键',一般情况下不使用自带的timestamps也是在modele中声明其值为false
+
+
+	laravel框架中的每一个form表单都需要一个csrf_field的key,方法是在form表单中添加{!!csrf_field!!}
+
+	laravel中在模版上打印出错信息{{print_r($error)}}
+
+		用模版的快捷方式就在于稀里糊涂的就完成注册登录这些东西了,登录主要的就是以上
